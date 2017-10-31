@@ -1,0 +1,10 @@
+package com.lu.bos.dao.base.impl;
+
+import org.springframework.stereotype.Repository;
+
+import com.lu.bos.dao.ISubareaDao;
+import com.lu.bos.domain.Subarea;
+@Repository
+public class SubareaDaoImpl  extends BaseDaoImpl<Subarea> implements ISubareaDao{
+
+}

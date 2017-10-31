@@ -1,0 +1,9 @@
+package com.lu.bos.service;
+
+import com.lu.bos.domain.Staff;
+
+public interface IStaffService {
+
+public	void save(Staff model);
+
+}

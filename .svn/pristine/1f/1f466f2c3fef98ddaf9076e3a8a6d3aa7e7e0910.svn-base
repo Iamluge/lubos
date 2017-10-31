@@ -1,0 +1,23 @@
+package com.lu.bos.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.lu.bos.dao.IStaffDao;
+import com.lu.bos.domain.Staff;
+
+@Service
+@Transactional
+public class StaffServiceImpl implements IStaffService {
+	@Autowired
+	private IStaffDao staffDao;
+
+	@Override
+	public void save(Staff model) {
+		// TODO Auto-generated method stub
+		staffDao.save(model);
+	}
+
+}

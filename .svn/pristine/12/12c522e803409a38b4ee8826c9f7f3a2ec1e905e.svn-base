@@ -1,0 +1,13 @@
+package com.lu.bos.dao.base;
+
+import com.lu.bos.dao.IBaseDao;
+
+import com.lu.bos.domain.User;
+
+public interface IUserDao extends IBaseDao<User> {
+
+	public User findUserByUsernameAndPassword(String username, String password);
+
+	public User findUserByUsername(String username);
+
+}

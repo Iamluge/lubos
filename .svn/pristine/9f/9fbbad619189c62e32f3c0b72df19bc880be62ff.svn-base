@@ -1,0 +1,7 @@
+package com.lu.bos.dao;
+
+import com.lu.bos.domain.Subarea;
+
+public interface ISubareaDao extends IBaseDao<Subarea> {
+
+}

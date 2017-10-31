@@ -1,0 +1,54 @@
+package com.lu.bos.service;
+
+import org.apache.commons.lang.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.lu.bos.dao.IStaffDao;
+import com.lu.bos.domain.Staff;
+import com.lu.bos.utils.PageBean;
+
+@Service
+@Transactional
+public class StaffServiceImpl implements IStaffService {
+	@Autowired
+	private IStaffDao staffDao;
+
+	@Override
+	public void save(Staff model) {
+		// TODO Auto-generated method stub
+		staffDao.save(model);
+	}
+
+	@Override
+	public void pageQuery(PageBean pageBean) {
+		staffDao.pageQuery(pageBean);
+
+	}
+
+	@Override
+	public void deleteBacth(String ids) {
+		if (StringUtils.isNotBlank(ids)) {
+			String[] staffids = ids.split(",");
+			for (String id : staffids) {
+				staffDao.executeUpdate("staff.delete", id);
+			}
+		}
+	}
+
+	@Override
+	public Staff findById(String id) {
+		
+		return staffDao.findById(id);
+	}
+
+	@Override
+	public void update(Staff staff) {
+		// TODO Auto-generated method stub
+		staffDao.update(staff);
+		
+	}
+
+}

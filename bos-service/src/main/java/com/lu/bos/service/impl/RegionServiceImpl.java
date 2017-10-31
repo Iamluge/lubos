@@ -1,0 +1,54 @@
+package com.lu.bos.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.lu.bos.dao.IRegionDao;
+import com.lu.bos.domain.Region;
+import com.lu.bos.service.IRegionService;
+import com.lu.bos.utils.PageBean;
+
+@Service
+@Transactional
+public class RegionServiceImpl implements IRegionService {
+	@Autowired
+	private IRegionDao regionDao;
+
+	/*
+	 * 区域数据批量保存
+	 */
+	public void saveBatch(List<Region> regionList) {
+		// TODO Auto-generated method stub
+		for (Region region : regionList) {
+			regionDao.saveOrUpdate(region);
+		}
+	}
+
+	@Override
+	public void pageQuery(PageBean pageBean) {
+		// TODO Auto-generated method stub
+		regionDao.pageQuery(pageBean);
+	}
+
+	@Override
+	public List<Region> findAll() {
+		// TODO Auto-generated method stub
+		return regionDao.findAll();
+	}
+
+	@Override
+	public List<Region> findListByQ(String q) {
+		
+		return regionDao.findListByQ(q);
+	}
+
+	@Override
+	public void save(Region model) {
+		// TODO Auto-generated method stub
+		regionDao.save(model);
+	}
+
+}

@@ -1,0 +1,12 @@
+package com.lu.bos.service;
+
+import com.lu.bos.domain.Subarea;
+import com.lu.bos.utils.PageBean;
+
+public interface ISubareaService {
+
+	public void save(Subarea model);
+
+	public void pageQuery(PageBean pageBean);
+
+}

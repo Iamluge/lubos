@@ -1,0 +1,24 @@
+package com.lu.bos.dao;
+
+import java.io.Serializable;
+import java.util.List;
+
+import com.lu.bos.domain.User;
+
+/*
+ * 持久层通用接口
+ */
+public interface IBaseDao<T> {
+	public void save(T entity);
+
+	public void delete(T entity);
+
+	public void update(T entity);
+
+	public T findById(Serializable  entity);
+	
+	public List<T> findAll();
+
+	public void executeUpdate(String queryname,Object ...objects);
+
+}
