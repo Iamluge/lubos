@@ -1,4 +1,4 @@
-package com.lu.bos.dao;
+﻿package com.lu.bos.dao;
 
 import java.io.Serializable;
 import java.util.List;
@@ -9,7 +9,7 @@ import com.lu.bos.domain.User;
 import com.lu.bos.utils.PageBean;
 
 /*
- * 持久层通用接口
+ * 持久层通用接口test一下
  */
 public interface IBaseDao<T> {
 	public void save(T entity);
